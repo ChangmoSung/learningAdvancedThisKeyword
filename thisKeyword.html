@@ -7,6 +7,8 @@
 </head>
 <body>
 <script>
+    "use strict";
+
     // console.log(this)
 
     // this.asim = 1;
@@ -42,7 +44,6 @@
     // const func = asim.checkThis;
     // func();
 
-    "use strict";
 
     // function asim(param1, param2) {
     //     console.log(this);
@@ -50,44 +51,44 @@
 
     // asim.call(1);
 
-    // const asim = {
-    //     checkThis: function() {
-    //         console.log(this);
-    //        function checkOther() {
-    //            console.log(this)
-    //        }
-    //        checkOther.call(this)
-    //     }
-    // }
+    const asim = {
+        checkThis: function() {
+            console.log(this);
+           function checkOther() {
+               console.log(this)
+           }
+           checkOther.call(this)
+        }
+    }
 
-    // asim.checkThis();
+    asim.checkThis();
 
-    // function a(a,b,c) {
-    //     console.log(this);
-    //     console.log(a)
-    //     console.log(b)
-    //     console.log(c)
-    // }
+    function a(a,b,c) {
+        console.log(this);
+        console.log(a)
+        console.log(b)
+        console.log(c)
+    }
 
-    // a.call(1,2,3,4);
+    a.call(1,2,3,4);
 
-    // a.apply(1, [2,3,4]);
+    a.apply(1, [2,3,4]);
 
-    // function sum() {
-    //     let total = 0;
-    //     console.log(arguments)
-    //     console.log(this)
+    function sum() {
+        let total = 0;
+        console.log(arguments)
+        console.log(this)
 
-    //     for (let i = 0; i < arguments.length; i++) {
-    //         total += arguments[i];
-    //     }
-    //     return total;
-    // }
+        for (let i = 0; i < arguments.length; i++) {
+            total += arguments[i];
+        }
+        return total;
+    }
 
-    // const things = [1,2,3,4,5,123,1,42,325,3];
+    const things = [1,2,3,4,5,123,1,42,325,3];
 
-    // const x = sum.apply(null, things);
-    // console.log(x);
+    const x = sum.apply(null, things);
+    console.log(x);
 
     // const a = function() {
     //     console.log(this);
