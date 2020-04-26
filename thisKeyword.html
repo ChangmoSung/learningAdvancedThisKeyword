@@ -20,27 +20,97 @@
 
     // checkThis()
 
-    const asim = {
-        checkThis: function() {
-            const self = this;
-            console.log(self);
+    // const asim = {
+    //     checkThis: function() {
+    //         const self = this;
+    //         console.log(self);
 
-            function checkOther() {
-                console.log(self)
+    //         function checkOther() {
+    //             console.log(self)
 
-                self.moo = 1;
-            }
-            checkOther();
-            console.log(self.moo);
-            console.log(window.moo);
+    //             self.moo = 1;
+    //         }
+    //         checkOther();
+    //         console.log(self.moo);
+    //         console.log(window.moo);
+    //     }
+    // }
+
+    // asim.checkThis();
+    // console.log(asim);
+
+    // const func = asim.checkThis;
+    // func();
+
+    "use strict";
+
+    // function asim(param1, param2) {
+    //     console.log(this);
+    // }
+
+    // asim.call(1);
+
+    // const asim = {
+    //     checkThis: function() {
+    //         console.log(this);
+    //        function checkOther() {
+    //            console.log(this)
+    //        }
+    //        checkOther.call(this)
+    //     }
+    // }
+
+    // asim.checkThis();
+
+    // function a(a,b,c) {
+    //     console.log(this);
+    //     console.log(a)
+    //     console.log(b)
+    //     console.log(c)
+    // }
+
+    // a.call(1,2,3,4);
+
+    // a.apply(1, [2,3,4]);
+
+    // function sum() {
+    //     let total = 0;
+    //     console.log(arguments)
+    //     console.log(this)
+
+    //     for (let i = 0; i < arguments.length; i++) {
+    //         total += arguments[i];
+    //     }
+    //     return total;
+    // }
+
+    // const things = [1,2,3,4,5,123,1,42,325,3];
+
+    // const x = sum.apply(null, things);
+    // console.log(x);
+
+    // const a = function() {
+    //     console.log(this);
+    // }.bind(2)
+
+    // const asim = {
+    //     func: a
+    // }
+
+    // asim.func();
+    // a();
+
+    let obj = {
+        name: 'changmo',
+        sayLater: function() {
+            console.log(this.name)
+            setTimeout(() => {
+                console.log(this.name);
+            }, 1000)
         }
     }
 
-    asim.checkThis();
-    console.log(asim);
-
-    const func = asim.checkThis;
-    func();
+    obj.sayLater()
 </script>
 </body>
 </html>
